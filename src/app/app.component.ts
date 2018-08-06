@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <app-choice></app-choice>
+    <h1>App component</h1>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent {
-  title = 'primeng-overlay-issue';
 }
