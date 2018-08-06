@@ -7,20 +7,26 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 import { AppComponent } from './app.component';
 import { OverlayComponent } from './overlay.component';
-import { TestComponent } from './test.component';
+import { Test1Component } from './test1.component';
+import { Test2Component } from './test2.component';
 import { TestGuard } from './test.guard';
 
 const appRoutes: Routes = [
-  { 
-    path: '', 
-    component: OverlayComponent 
+  {
+    path: '',
+    component: OverlayComponent
   },
-  { 
-    path: 'test', 
-    component: TestComponent,
+  {
+    path: 'one',
+    component: Test1Component
+  },
+  {
+    path: 'two',
+    component: Test2Component,
     canActivate: [
       TestGuard
     ]
@@ -31,7 +37,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     OverlayComponent,
-    TestComponent
+    Test1Component,
+    Test2Component
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,7 @@ const appRoutes: Routes = [
     ButtonModule,
     FormsModule,
     OverlayPanelModule,
+    ProgressBarModule,
     ToggleButtonModule,
 
     RouterModule.forRoot(
