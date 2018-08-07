@@ -14,6 +14,7 @@ import { OverlayComponent } from './overlay.component';
 import { Test1Component } from './test1.component';
 import { Test2Component } from './test2.component';
 import { TestGuard } from './test.guard';
+import { ProgressBarComponent } from './progress-bar.component';
 
 const appRoutes: Routes = [
   {
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     AppComponent,
     OverlayComponent,
     Test1Component,
-    Test2Component
+    Test2Component,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
