@@ -8,18 +8,23 @@ import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
 import { OverlayComponent } from './overlay.component';
 import { Test1Component } from './test1.component';
 import { Test2Component } from './test2.component';
-import { TestGuard } from './test.guard';
+import { DelayGuard } from './delay.guard';
 import { ProgressBarComponent } from './progress-bar.component';
+import { MyComponent } from './my.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: OverlayComponent
+    component: MyComponent,
+    canActivate: [
+      DelayGuard
+    ]
   },
   {
     path: 'one',
@@ -29,7 +34,7 @@ const appRoutes: Routes = [
     path: 'two',
     component: Test2Component,
     canActivate: [
-      TestGuard
+      DelayGuard
     ]
   }
 ];
@@ -40,7 +45,8 @@ const appRoutes: Routes = [
     OverlayComponent,
     Test1Component,
     Test2Component,
-    ProgressBarComponent
+    ProgressBarComponent,
+    MyComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +55,7 @@ const appRoutes: Routes = [
     FormsModule,
     OverlayPanelModule,
     ProgressBarModule,
+    ProgressSpinnerModule,
     ToggleButtonModule,
 
     RouterModule.forRoot(
