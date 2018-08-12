@@ -11,42 +11,31 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
-import { OverlayComponent } from './overlay.component';
-import { Test1Component } from './test1.component';
-import { Test2Component } from './test2.component';
 import { DelayGuard } from './delay.guard';
 import { ProgressBarComponent } from './progress-bar.component';
-import { MyComponent } from './my.component';
+import { NavComponent } from './nav.component';
+import { ContentComponent } from './content.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: MyComponent,
-    canActivate: [
-      DelayGuard
-    ]
-  },
-  {
-    path: 'one',
-    component: Test1Component
-  },
-  {
-    path: 'two',
-    component: Test2Component,
-    canActivate: [
-      DelayGuard
-    ]
+    component: NavComponent,
+    children: [{
+      path: '',
+      component: ContentComponent,
+      canActivate: [
+        DelayGuard
+      ]
+    }]
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    OverlayComponent,
-    Test1Component,
-    Test2Component,
     ProgressBarComponent,
-    MyComponent
+    NavComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
