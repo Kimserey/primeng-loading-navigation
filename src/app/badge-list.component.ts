@@ -68,9 +68,7 @@ export class BadgeListComponent {
 
   select(badge) {
     this.badges = this.badges.map(b => 
-      Object.assign({}, b, {
-        selected: b.name == badge.name ? true : false
-      }
+      Object.assign({}, b, { selected: b.name == badge.name ? true : false })
     );
   }
 }

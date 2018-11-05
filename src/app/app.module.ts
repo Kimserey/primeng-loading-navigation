@@ -9,6 +9,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { SidebarModule } from 'primeng/sidebar';
 
 import { AppComponent } from './app.component';
 import { BadgeListComponent } from './badge-list.component';
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
     children: [{
       path: '',
       component: BadgeListComponent
-    },{
+    }, {
       path: 'delay',
       component: ContentComponent,
       canActivate: [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     ProgressBarModule,
     ProgressSpinnerModule,
     ToggleButtonModule,
+    SidebarModule,
 
     RouterModule.forRoot(
       appRoutes,
