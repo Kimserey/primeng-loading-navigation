@@ -8,10 +8,10 @@ import { of } from "rxjs";
 })
 export class DelayGuard implements CanActivate, CanActivateChild {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return of(true).pipe(delay(5000));
+    return of(true).pipe(delay(3000));
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      return of(true).pipe(delay(5000));
+      return of(true).pipe(delay(3000));
   }
 }

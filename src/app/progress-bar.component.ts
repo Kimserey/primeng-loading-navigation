@@ -14,7 +14,7 @@ import { filter, map } from 'rxjs/operators';
         z-index: 10;
     }`, `
     :host ::ng-deep .ui-progressbar {
-        height: 3px;
+        height: 10px;
         background: #c5c5c5;
     }`, `
     :host ::ng-deep .ui-widget-header {
