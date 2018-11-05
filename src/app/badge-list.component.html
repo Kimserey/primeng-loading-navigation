@@ -1,18 +1,26 @@
-<div class="container">
-  <div>
-    <a class="badge" href="#" (click)="$event.preventDefault(); select(badge);" [ngClass]="{ 'mr-3': !last, 'badge-primary': badge.selected, 'badge-light': !badge.selected }"
-      *ngFor="let badge of badges; last as last">
-      {{badge.name}}
-    </a>
+<div class="container py-2">
+  <div class="d-none d-md-block">
+    <button pButton type="button" 
+      [label]="badge.name" 
+      class="ui-button-rounded mb-2" 
+      [ngClass]="{ 'mr-2': !last, 'ui-button-primary': badge.selected, 'ui-button-secondary': !badge.selected }" 
+      (click)="$event.preventDefault(); select(badge);"
+      *ngFor="let badge of badges; last as last"></button>
   </div>
 
-  <div>
-    <button pButton type="button" label="Badges" icon="pi pi-sort" iconPos="right" class="ui-button-secondary" (click)="display = true"></button>
+  <div class="d-md-none text-center">
+    <button pButton type="button" 
+      label="Brands" 
+      icon="pi pi-sort" 
+      iconPos="right" 
+      class="ui-button-secondary" 
+      (click)="display = true" 
+      [ngStyle]="{ 'width': '7em'}"></button>
   </div>
   
-  <p-sidebar [(visible)]="display" position="bottom" appendTo="body" styleClass="ui-sidebar-lg">
+  <p-sidebar [(visible)]="display" position="bottom" appendTo="body" styleClass="ui-sidebar-md">
     <div>
-      <div>Badges</div>
+      <h3 class="mb-3">Brands</h3>
       <button pButton type="button" 
         [label]="badge.name" 
         class="ui-button-rounded mb-2" 
