@@ -11,6 +11,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
+import { BadgeListComponent } from './badge-list.component';
 import { DelayGuard } from './delay.guard';
 import { ProgressBarComponent } from './progress-bar.component';
 import { NavComponent } from './nav.component';
@@ -19,9 +20,11 @@ import { ContentComponent } from './content.component';
 const appRoutes: Routes = [
   {
     path: '',
-    component: NavComponent,
     children: [{
       path: '',
+      component: BadgeListComponent
+    },{
+      path: 'delay',
       component: ContentComponent,
       canActivate: [
         DelayGuard
@@ -35,7 +38,8 @@ const appRoutes: Routes = [
     AppComponent,
     ProgressBarComponent,
     NavComponent,
-    ContentComponent
+    ContentComponent,
+    BadgeListComponent
   ],
   imports: [
     BrowserModule,

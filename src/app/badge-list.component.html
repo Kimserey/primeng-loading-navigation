@@ -1,0 +1,6 @@
+<div>
+  <a class="badge" href="#" (click)="$event.preventDefault(); select(badge);" [ngClass]="{ 'mr-3': !last, 'badge-primary': badge.selected, 'badge-light': !badge.selected }"
+    *ngFor="let badge of badges; last as last">
+    {{badge.name}}
+  </a>
+</div>
